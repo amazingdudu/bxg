@@ -1,0 +1,26 @@
+.main {
+  padding-top: 70px;
+  margin-left: 180px;
+  background: #F4F6F8;
+  height: 100%;
+}
+.main .breadcrumb {
+  background: #ffffff;
+}
+.main .add-teacher {
+  background-color: #FFF;
+  border: 1px solid #EEE;
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.main .panel .panel-heading {
+  background: #ffffff;
+}
+.main .input-group {
+  width: 200px;
+}
+.main .table th {
+  text-align: center;
+}

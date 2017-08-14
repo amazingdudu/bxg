@@ -1,0 +1,86 @@
+.sidebar {
+  position: fixed;
+  width: 180px;
+  height: 100%;
+  background: #2F4050;
+}
+.sidebar .user-info {
+  height: 160px;
+  background: #243443;
+  overflow: hidden;
+}
+.sidebar .user-pic {
+  width: 80px;
+  margin: 20px auto 0;
+  border-radius: 50%;
+  border: 2px solid #66717c;
+  overflow: hidden;
+}
+.sidebar .user-pic img {
+  width: 80px;
+}
+.sidebar .uesr-name {
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+}
+.sidebar .menu {
+  padding-top: 24px;
+}
+.sidebar .menu a {
+  display: block;
+  height: 34px;
+  line-height: 34px;
+  padding-left: 20px;
+  color: #a9b0c2;
+  margin-bottom: 10px;
+}
+.sidebar .menu a:hover {
+  background: #243443;
+  color: #ffffff;
+}
+.sidebar .menu a i {
+  width: 18px;
+  margin-right: 10px;
+}
+.sidebar .user-dropdown {
+  position: relative;
+}
+.sidebar .user-dropdown-menu {
+  width: 100%;
+  position: absolute;
+  top: 44px;
+  display: none;
+}
+.sidebar .user-dropdown-menu a {
+  padding-left: 48px;
+}
+.navbar {
+  background: #ffffff;
+  margin-left: 180px;
+}
+.navbar .navbar-header {
+  background: #5cb85c;
+  width: 28px;
+  height: 28px;
+  border-radius: 2px;
+  text-align: center;
+  margin-top: 12px;
+}
+.navbar .navbar-header a {
+  line-height: 30px;
+  color: #ffffff;
+  float: none;
+}
+.navbar .navbar-header a:hover {
+  color: #ffffff;
+}
+.navbar .navbar-right a {
+  color: #337ab7 !important;
+}
+.main {
+  padding-top: 70px;
+  margin-left: 180px;
+  background: #F4F6F8;
+  height: 100%;
+}

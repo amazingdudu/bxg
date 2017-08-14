@@ -1,0 +1,17 @@
+.navbar {
+  z-index: 10;
+}
+.main .breadcrumb {
+  background: #ffffff;
+}
+.main .add-area {
+  background: #ffffff;
+  padding: 40px 0 25px;
+  overflow: hidden;
+}
+.main .add-area .form-horizontal {
+  width: 540px;
+}
+.main .add-area #btn-save {
+  margin-right: 15px;
+}
