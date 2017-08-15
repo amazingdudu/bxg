@@ -138,23 +138,38 @@ a {
 .breadcrumb {
   background: #ffffff;
 }
-.main .well {
-  overflow: hidden;
-  background: #ffffff;
-  border: 0;
+.sidebar .menu li:first-child {
+  background: #000;
 }
-.main .panel .panel-heading {
-  background: #ffffff;
+.main .statistics .row {
+  margin: 0;
 }
-.main .table th {
-  text-align: center;
+.main .statistics .item {
+  height: 80px;
+  background: forestgreen;
+  padding: 15px;
 }
-.modal .modal-dialog {
-  width: 750px !important;
+.main .statistics .income {
+  background: #FC8675;
 }
-.modal .intro {
-  padding: 20px;
+.main .statistics .courses {
+  background: #5AB6DF;
 }
-.modal p {
-  margin-bottom: 20px;
+.main .statistics .users {
+  background: #65CEA7;
+}
+.main .statistics .pageview {
+  background: #EBC85E;
+}
+.main .statistics i {
+  font-size: 50px;
+  color: #FFFFFF;
+}
+.main .statistics .detail {
+  margin-left: 30px;
+}
+.main .statistics .detail span {
+  display: block;
+  color: #FFFFFF;
+  margin-bottom: 10px;
 }

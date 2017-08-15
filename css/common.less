@@ -1,4 +1,3 @@
-
 .sidebar {
   position: fixed;
   width: 180px;
@@ -7,16 +6,17 @@
   .user-info {
     height: 160px;
     background: #243443;
-    overflow: hidden;
+    padding-top: 20px;
   }
   .user-pic {
     width: 80px;
-    margin: 20px auto 0;
+    height: 80px;
     border-radius: 50%;
     border: 2px solid #66717c;
+    padding: 4px;
     overflow: hidden;
     img {
-      width: 80px;
+      width: 70px;
     }
   }
   .uesr-name {
@@ -46,11 +46,15 @@
   //有下拉菜单的项
   .user-dropdown {
     position: relative;
-  }
+    .arrow-icon {
+      margin-left: 30px;
+    }
+   }
   //下拉菜单
   .user-dropdown-menu {
     width: 100%;
     position: absolute;
+    left: 0;
     top: 44px;
     display: none;
     a {
@@ -88,4 +92,8 @@
   margin-left: 180px;
   background: #F4F6F8;
   height: 100%;
+}
+//路径导航背景颜色
+.breadcrumb {
+  background: #ffffff;
 }

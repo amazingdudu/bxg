@@ -7,17 +7,18 @@
 .sidebar .user-info {
   height: 160px;
   background: #243443;
-  overflow: hidden;
+  padding-top: 20px;
 }
 .sidebar .user-pic {
   width: 80px;
-  margin: 20px auto 0;
+  height: 80px;
   border-radius: 50%;
   border: 2px solid #66717c;
+  padding: 4px;
   overflow: hidden;
 }
 .sidebar .user-pic img {
-  width: 80px;
+  width: 70px;
 }
 .sidebar .uesr-name {
   color: #fff;
@@ -46,9 +47,13 @@
 .sidebar .user-dropdown {
   position: relative;
 }
+.sidebar .user-dropdown .arrow-icon {
+  margin-left: 30px;
+}
 .sidebar .user-dropdown-menu {
   width: 100%;
   position: absolute;
+  left: 0;
   top: 44px;
   display: none;
 }
@@ -83,4 +88,7 @@
   margin-left: 180px;
   background: #F4F6F8;
   height: 100%;
+}
+.breadcrumb {
+  background: #ffffff;
 }

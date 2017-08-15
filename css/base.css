@@ -1,17 +1,35 @@
-html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form {
     margin: 0;
     padding: 0;
 }
 
-fieldset, img {
-    border: 0
+body,
+html {
+    height: 100%;
 }
 
 img {
-    display: block
+    border: 0;
+    display: block;
 }
 
-ol, ul {
+ol,
+ul {
     list-style: none;
 }
 
@@ -24,18 +42,6 @@ button {
     outline: 0;
 }
 
-.clearfix:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-}
-
-.clearfix {
-    zoom: 1;
-}
-
 em,
 i {
     font-style: normal;
@@ -43,7 +49,4 @@ i {
 
 a {
     text-decoration: none;
-}
-body,html {
-    height: 100%;
 }
