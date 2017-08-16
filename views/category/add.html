@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每天进步一点点</title>
+    <?php include_once("./views/common/style.html"); ?>
+    <link rel="stylesheet/less" href="/assets/less/index.less">
+    <?php include_once("./views/common/script.html"); ?>
+</head>
+<body>
+<?php include_once("./views/common/sidebar.html"); ?>
+<div class="main">
+    <div id="category-add">
+        <div class="container-fluid">
+            <!--路径导航-->
+            <ol class="breadcrumb">
+                <li><a href="#">课程管理</a></li>
+                <li class="active">添加分类</li>
+            </ol>
+            <div class="form clearfix">
+                <form class="form-horizontal col-lg-4 col-lg-offset-4">
+                    <div class="form-group">
+                        <label for="courseName" class="col-sm-2 control-label">名称</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="courseName" placeholder="填写分类名称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="courseSelect" class="col-sm-2 control-label">级别</label>
+                        <div class="col-sm-7">
+                            <select name="" id="courseSelect" class="form-control">
+                                <option value="0">顶级分类</option>
+                                <option value="1">前端开发</option>
+                                <option value="2">后端开发</option>
+                                <option value="3">数据库</option>
+                                <option value="4"> 视觉设计</option>
+                                <option value="15">移动开发</option>
+                                <option value="16">云计算&amp;大数据</option>
+                                <option value="17">运维&amp;测试</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="courseSort" class="col-sm-2 control-label">名称</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="courseSort" value="10">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="courseSort" class="col-sm-2 control-label">是否选择</label>
+                        <div class="col-sm-5">
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 是
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 否
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group pull-right">
+                        <button type="submit" class="btn btn-success">保 存</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

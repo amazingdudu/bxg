@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每天进步一点点</title>
+    <?php include_once("./views/common/style.html"); ?>
+    <link rel="stylesheet/less" href="/assets/less/index.less">
+    <?php include_once("./views/common/script.html"); ?>
+</head>
+<body>
+<?php include_once("./views/common/sidebar.html"); ?>
+<div class="main">
+    <div id="category-manage">
+        <div class="container-fluid">
+            <!--路径导航-->
+            <ol class="breadcrumb">
+                <li><a href="#">课程管理</a></li>
+                <li class="active">课程分类</li>
+            </ol>
+            <div class="add-category well well-sm clearfix">
+                <a href="/index.php/category/add" type="button" class="btn btn-success pull-right">添加分类</a>
+            </div>
+            <table class="table table-bordered text-center">
+                <thead>
+                <tr>
+                    <th>分类</th>
+                    <th>课程</th>
+                    <th>是否显示</th>
+                    <th>排序</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="frontend active">
+                    <td>前端开发</td>
+                    <td>12</td>
+                    <td>否</td>
+                    <td>10</td>
+                    <td><button type="button" class="btn btn-info btn-xs">编辑</button></td>
+                </tr>
+                <tr>
+                    <td>HTML/CSS</td>
+                    <td>12</td>
+                    <td>否</td>
+                    <td>10</td>
+                    <td><button type="button" class="btn btn-info btn-xs">编辑</button></td>
+                </tr>
+                <tr class="backtend active">
+                    <td >前端开发</td>
+                    <td>12</td>
+                    <td>否</td>
+                    <td>10</td>
+                    <td><button type="button" class="btn btn-info btn-xs">编辑</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

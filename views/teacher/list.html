@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每天进步一点点</title>
+    <?php include_once("./views/common/style.html"); ?>
+    <link rel="stylesheet/less" href="/assets/less/index.less">
+    <?php include_once("./views/common/script.html"); ?>
+</head>
+<body>
+
+<?php include_once("./views/common/sidebar.html"); ?>
+
+<div class="main">
+    <div id="teacher-list-page">
+        <div class="container-fluid">
+            <!--路径导航-->
+            <ol class="breadcrumb">
+                <li><a href="#">讲师管理</a></li>
+                <li class="active">讲师列表</li>
+            </ol>
+            <!--添加讲师-->
+            <div class="add-teacher clearfix well well-sm">
+                <a href="/index.php/teacher/add" type="button" class="btn btn-success btn-sm pull-right">添加讲师</a>
+            </div>
+            <!--讲师列表-->
+            <div class="panel panel-default">
+                <!--搜索栏-->
+                <div class="panel-heading">
+                    <form class="form-inline">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-sm">
+                            <span class="input-group-btn">
+                            <button class="btn btn-success btn-sm" type="button">搜索</button>
+                        </span>
+                        </div>
+                    </form>
+                </div>
+                <!--列表-->
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>姓名</th>
+                        <th>昵称</th>
+                        <th>性别</th>
+                        <th>手机号码</th>
+                        <th>出生日期</th>
+                        <th>邮箱</th>
+                        <th>入职日期</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="text-center">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto3333333333333333</td>
+                        <td>@mdo</td>
+                        <td>1333333333333</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs" data-toggle="modal"
+                                    data-target="#teacherInfo">查看
+                            </button>
+                            <button type="button" class="btn btn-info btn-xs">编辑</button>
+                            <button type="button" class="btn btn-warning btn-xs">注销</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto3333333333333333</td>
+                        <td>@mdo</td>
+                        <td>1333333333333</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs" data-toggle="modal"
+                                    data-target="#myModal">查看
+                            </button>
+                            <button type="button" class="btn btn-info btn-xs">编辑</button>
+                            <button type="button" class="btn btn-warning btn-xs">注销</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto3333333333333333</td>
+                        <td>@mdo</td>
+                        <td>1333333333333</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs" data-toggle="modal"
+                                    data-target="#myModal">查看
+                            </button>
+                            <button type="button" class="btn btn-info btn-xs">编辑</button>
+                            <button type="button" class="btn btn-warning btn-xs">注销</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="modal fade" id="teacherInfo" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h5 class="modal-title" id="myModalLabel">讲师信息</h5>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-bordered">
+                            <tbody>
+                            <tr>
+                                <th>姓名:</th>
+                                <td>李清照</td>
+                                <th>职位:</th>
+                                <td colspan="2">讲师</td>
+                                <td rowspan="4">
+                                    <img src="../../uploads/5869fc961c17f.jpg" width="100" class="center-block">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>花名:</th>
+                                <td>出生日期:</td>
+                                <th>1970-01-01</th>
+                                <td colspan="2">1970-01-01</td>
+                            </tr>
+                            <tr>
+                                <th>性别:</th>
+                                <td>女</td>
+                                <td>入职日期:</td>
+                                <td colspan="2">2015-02-14</td>
+                            </tr>
+                            <tr>
+                                <th>手机号码:</th>
+                                <td colspan="2">Larry</td>
+                                <td>邮箱:</td>
+                                <td>liqingzhao@itcast.cn</td>
+                            </tr>
+                            <tr>
+                                <th>籍贯:</th>
+                                <td colspan="5">山东省 济南市 章丘市</td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" class="intro">
+                                    <p>李清照（1084年3月13日—1155年？），号易安居士，汉族，齐州济南（今山东省济南市章丘区）人。宋代女词人，婉约词派代表，有“千古第一才女”之称。</p>
+
+                                    <p>李清照出生于书香门第，早期生活优裕，其父李格非藏书甚富，她小时候就在良好的家庭环境中打下文学基础。出嫁后与夫赵明诚共同致力于书画金石的搜集整理。金兵入据中原时，流寓南方，境遇孤苦。所作词，前期多写其悠闲生活，后期多悲叹身世，情调感伤。形式上善用白描手法，自辟途径，语言清丽。论词强调协律，崇尚典雅，提出词“别是一家”之说，反对以作诗文之法作词。能诗，留存不多，部分篇章感时咏史，情辞慷慨，与其词风不同。</p>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--弹出框-->
+
+
+<!--列表模板-->
+<script type="text/html" id="tableTemplate">
+    <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto3333333333333333</td>
+        <td>@mdo</td>
+        <td>1333333333333</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>
+            <button type="button" class="btn btn-info btn-xs">查看</button>
+            <button type="button" class="btn btn-info btn-xs">编辑</button>
+            <button type="button" class="btn btn-warning btn-xs">注销</button>
+        </td>
+    </tr>
+</script>
+
+<script>
+
+    $(function () {
+        $("#toggle-btn").click(function (e) {
+            e.preventDefault();
+
+            $(".user-dropdown-menu").slideToggle();
+        });
+    });
+
+</script>
+</body>
+</html>

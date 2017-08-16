@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每天进步一点点</title>
+    <!-----------引入公共样式文件---------------->
+    <?php include_once("./views/common/style.html"); ?>
+    <link rel="stylesheet/less" href="/assets/less/index.less">
+    <!------------引入js库文件----------------------->
+    <?php include_once("./views/common/script.html"); ?>
+</head>
+<body>
+<!---------------公共侧边栏和导航---------------------->
+<?php include_once("./views/common/sidebar.html"); ?>
+<div class="main">
+    <div id="index-page">
+        <div class="statistics">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="well item income">
+                        <div class="icon pull-left">
+                            <i class="fa fa-money"></i>
+                        </div>
+                        <div class="detail pull-left">
+                            <span>我的收入</span>
+                            <span>￥11.11</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="well item courses">
+                        <div class="icon pull-left">
+                            <i class="fa fa-th"></i>
+                        </div>
+                        <div class="detail pull-left">
+                            <span>课程数量</span>
+                            <span>12</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="well item users">
+                        <div class="icon pull-left">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="detail pull-left">
+                            <span>用户数量</span>
+                            <span>1234</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="well item pageview ">
+                        <div class="icon pull-left">
+                            <i class="fa fa-eye"></i>
+                        </div>
+                        <div class="detail pull-left">
+                            <span>浏览量</span>
+                            <span>15555</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    $(function () {
+        $("#toggle-btn").click(function (e) {
+            e.preventDefault();
+
+            $(".user-dropdown-menu").stop().slideToggle();
+        });
+    });
+
+</script>
+</body>
+</html>

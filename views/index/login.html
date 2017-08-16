@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每天进步一点点</title>
+    <?php
+        include_once("./views/common/style.html")
+    ?>
+    <link rel="stylesheet/less" href="/assets/less/index.less">
+    <?php
+        include_once("./views/common/script.html");
+    ?>
+</head>
+<body>
+<div id="login-page">
+    <div class="login center-block">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" class="form-control input-lg" id="inputUser">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                    <input type="text" class="form-control input-lg" id="inputPassword">
+                </div>
+            </div>
+            <div class="form-group">
+                <a href="index.html" type="submit" class="btn btn-primary btn-lg btn-block">登 录</a>
+            </div>
+        </form>
+        <div class="head-portrait">
+            <img src="../../uploads/xj.png" alt="">
+        </div>
+    </div>
+</div>
+</body>
+</html>
