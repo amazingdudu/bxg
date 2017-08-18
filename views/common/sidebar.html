@@ -6,7 +6,6 @@
         <div class="user-pic center-block">
             <img src="/uploads/xj.png" alt="">
         </div>
-        <!--用户名-->
         <div class="uesr-name">
             <span>滑稽</span>
         </div>
@@ -15,19 +14,20 @@
     <div class="menu">
         <ul>
             <li>
-                <a href="/index.php/index/index"><i class="fa fa-dashboard"></i>仪表盘</a>
+                <a href="/"><i class="fa fa-dashboard"></i>仪表盘</a>
             </li>
             <li>
-                <a href="/index.php/teacher/list" class="current">
+                <a href="/teacher/list" class="current">
                     <i class="fa fa-mortar-board"></i>讲师管理
                 </a>
             </li>
             <li>
-                <a href="/index.php/category/category"><i class="fa fa-indent"></i>分类管理</a>
+                <a href="/category/category"><i class="fa fa-indent"></i>分类管理</a>
             </li>
             <!--有下拉菜单项-->
             <li class="user-dropdown">
-                <a href="javascript:;" id="toggle-btn"><i class="fa fa-th"></i>课程管理<i class="fa fa-angle-right arrow-icon"></i></a>
+                <a href="javascript:;" id="toggle-btn"><i class="fa fa-th"></i>课程管理<i
+                        class="fa fa-angle-right arrow-icon"></i></a>
                 <!--下拉菜单-->
                 <ul class="user-dropdown-menu">
                     <li><a href="">课程添加</a></li>
@@ -41,14 +41,18 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#"><i class="fa fa-navicon"></i></a>
+            <a class="navbar-brand" href="javascript:;"><i class="fa fa-navicon"></i></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/index.php/user/profile"><i class="fa fa-user"></i> 个人中心</a></li>
-                <li><a href="/index.php/index/index.login"><i class="fa fa-sign-out"> 退出</i></a></li>
-                <li><a href="#"><i class="fa fa-tasks"></i></a></li>
+                <li><a href="/user/profile"><i class="fa fa-user"></i> 个人中心</a></li>
+                <li><a href="javascript:;" class="logout"><i class="fa fa-sign-out"> 退出</i></a></li>
+                <li><a href="javascript:;"><i class="fa fa-tasks"></i></a></li>
             </ul>
         </div>
     </div>
 </nav>
+<!--加载中。。。-->
+<div id="loading">
+    <img src="/assets/resources/images/loading.gif">
+</div>

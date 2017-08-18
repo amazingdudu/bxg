@@ -8,16 +8,14 @@
     <title>每天进步一点点</title>
     <!-----------引入公共样式文件---------------->
     <?php include_once("./views/common/style.html"); ?>
-    <link rel="stylesheet/less" href="/assets/less/index.less">
-    <!------------引入js库文件----------------------->
-    <?php include_once("./views/common/script.html"); ?>
+
+
 </head>
 <body>
 <!---------------公共侧边栏和导航---------------------->
 <?php include_once("./views/common/sidebar.html"); ?>
-<div class="main">
-    <div id="index-page">
-        <div class="statistics">
+<div class="main" id="index-page">
+    <div class="statistics">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="well item income">
@@ -65,18 +63,41 @@
                 </div>
             </div>
         </div>
-    </div>
+    <div id="chart" style="width: 600px;height:400px;"></div>
 </div>
+
+<!------------引入js库文件----------------------->
+<?php include_once("./views/common/script.html"); ?>
+
+<script src="/assets/libs/echarts/echarts.js"></script>
 <script>
 
-    $(function () {
-        $("#toggle-btn").click(function (e) {
-            e.preventDefault();
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('chart'));
 
-            $(".user-dropdown-menu").stop().slideToggle();
-        });
-    });
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        legend: {
+            data:['销量']
+        },
+        xAxis: {
+            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20]
+        }]
+    };
 
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
 </script>
+
 </body>
 </html>

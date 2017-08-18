@@ -8,8 +8,8 @@
     <title>讲师添加</title>
     <?php include_once("./views/common/style.html"); ?>
     <link rel="stylesheet" href="/assets/libs/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
-    <link rel="stylesheet/less" href="/assets/less/index.less">
-    <?php include_once("./views/common/script.html"); ?>
+
+
 
 </head>
 <body>
@@ -24,24 +24,24 @@
             </ol>
             <!--表单区域-->
             <div class="add-area">
-                <form class="form-horizontal center-block">
+                <form class="form-horizontal center-block" id="addForm">
                     <div class="form-group">
                         <label for="inputName" class="col-sm-2 control-label">姓名</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control input-sm" id="inputName">
+                            <input type="text" class="form-control input-sm" id="inputName" name="tc_name">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputPassword" class="col-sm-2 control-label">密码</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control input-sm" id="inputPassword">
+                            <input type="password" class="form-control input-sm" id="inputPassword" name="tc_pass">
                         </div>
                     </div>
                     <!--**************  时间控件 ***********************-->
                     <div class="form-group">
                         <label for="inputEntryTime" class="col-sm-2 control-label">入职时间</label>
                         <div class="input-append date col-sm-10" data-date-format="dd-mm-yyyy" id="datetimepicker">
-                            <input class="span2 form-control input-sm" size="16" type="text" id="inputEntryTime">
+                            <input class="span2 form-control input-sm" size="16" type="text" id="inputEntryTime" name="tc_join_date">
                             <span class="add-on"><i class="icon-th"></i></span>
                         </div>
                     </div>
@@ -49,9 +49,9 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">类型</label>
                         <div class="col-sm-5">
-                            <select class="form-control">
-                                <option>讲师</option>
-                                <option>管理员</option>
+                            <select class="form-control" name="tc_type">
+                                <option value="0">讲师</option>
+                                <option value="1">管理员</option>
                             </select>
                         </div>
                     </div>
@@ -60,10 +60,10 @@
                         <label class="col-sm-2 control-label">性别</label>
                         <div class="col-sm-10">
                             <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 男
+                                <input type="radio" name="tc_gender" value="0"> 男
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 女
+                                <input type="radio" name="tc_gender" value="1"> 女
                             </label>
                         </div>
                     </div>
@@ -76,13 +76,13 @@
         </div>
     </div>
 </div>
+<?php include_once("./views/common/script.html"); ?>
 <script src="/assets/libs/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
 <script src="/assets/libs/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
 <script>
     $(function () {
         //bootstrap时间控件
-        $("#datetimepicker").datetimepicker(
-            {
+        $("#datetimepicker").datetimepicker({
                 format: 'yyyy-mm-dd',  //日期格式   //默认 dd--mm--yyyy
                 autoclose: true,    //自动关闭  -- 默认值fasle
                 language: 'zh-CN',  //语言      --默认英文
@@ -94,6 +94,30 @@
                 initialDate: new Date()//初始化当前日期  可设置"2010/01/01"格式
             }
         );
+
+        $("#addForm").on("submit",function () {
+           var formData = $(this).serialize();
+            console.log(formData);
+            $.ajax({
+               url:"/api/teacher/add",
+                type:"post",
+                data:formData,
+                success:function(data){
+                    console.log(data);
+                    if(data.code==200){
+                        alert("添加成功");
+                    }
+                }
+            });
+//            $.post("/api/teacher/add",formData,function(data){
+//                    console.log(data);
+//                    if(data.code==200){
+//                        alert("添加成功");
+//                    }
+//                });
+            return false;
+        });
+
     });
 
 </script>

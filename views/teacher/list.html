@@ -7,16 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>每天进步一点点</title>
     <?php include_once("./views/common/style.html"); ?>
-    <link rel="stylesheet/less" href="/assets/less/index.less">
-    <?php include_once("./views/common/script.html"); ?>
+
+
 </head>
 <body>
 
 <?php include_once("./views/common/sidebar.html"); ?>
 
-<div class="main">
-    <div id="teacher-list-page">
-        <div class="container-fluid">
+<div class="main" id="teacher-list-page">
+    <div class="container-fluid">
             <!--路径导航-->
             <ol class="breadcrumb">
                 <li><a href="#">讲师管理</a></li>
@@ -54,7 +53,7 @@
                         <th>操作</th>
                     </tr>
                     </thead>
-                    <tbody class="text-center">
+                    <tbody class="text-center" id="teacherList">
                     <tr>
                         <th scope="row">1</th>
                         <td>Mark</td>
@@ -66,41 +65,7 @@
                         <td>@mdo</td>
                         <td>
                             <button type="button" class="btn btn-info btn-xs" data-toggle="modal"
-                                    data-target="#teacherInfo">查看
-                            </button>
-                            <button type="button" class="btn btn-info btn-xs">编辑</button>
-                            <button type="button" class="btn btn-warning btn-xs">注销</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto3333333333333333</td>
-                        <td>@mdo</td>
-                        <td>1333333333333</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>
-                            <button type="button" class="btn btn-info btn-xs" data-toggle="modal"
-                                    data-target="#myModal">查看
-                            </button>
-                            <button type="button" class="btn btn-info btn-xs">编辑</button>
-                            <button type="button" class="btn btn-warning btn-xs">注销</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto3333333333333333</td>
-                        <td>@mdo</td>
-                        <td>1333333333333</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>
-                            <button type="button" class="btn btn-info btn-xs" data-toggle="modal"
-                                    data-target="#myModal">查看
+                                    data-target="#infoModal">查看
                             </button>
                             <button type="button" class="btn btn-info btn-xs">编辑</button>
                             <button type="button" class="btn btn-warning btn-xs">注销</button>
@@ -110,15 +75,15 @@
                 </table>
             </div>
         </div>
-        <div class="modal fade" id="teacherInfo" tabindex="-1" role="dialog">
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h5 class="modal-title" id="myModalLabel">讲师信息</h5>
+                        <h5 class="modal-title">讲师信息</h5>
                     </div>
                     <div class="panel-body">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered" id="teacherInfo">
                             <tbody>
                             <tr>
                                 <th>姓名:</th>
@@ -164,38 +129,104 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>
 </div>
 <!--弹出框-->
 
 
-<!--列表模板-->
-<script type="text/html" id="tableTemplate">
+<!--讲师列表模板-->
+<script type="text/html" id="teacherListTemplate">
+    {{each result value index}}
     <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto3333333333333333</td>
-        <td>@mdo</td>
-        <td>1333333333333</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
+        <th data-id={{@value.tc_id}}>{{@value.tc_id}}</th>
+        <td>{{@value.tc_name}}</td>
+        <td>{{@value.tc_roster}}</td>
+        <td>{{@value.tc_gender}}</td>
+        <td>{{@value.tc_cellphone}}</td>
+        <td>{{@value.tc_birthday}}</td>
+        <td>{{@value.tc_email}}</td>
+        <td>{{@value.tc_join_date}}</td>
         <td>
-            <button type="button" class="btn btn-info btn-xs">查看</button>
-            <button type="button" class="btn btn-info btn-xs">编辑</button>
-            <button type="button" class="btn btn-warning btn-xs">注销</button>
+            <button type="button" class="btn btn-info btn-xs view-profile" data-toggle="modal"
+                    data-target="#infoModal">查看
+            </button>
+            <button type="button" class="btn btn-info btn-xs edit-profile">编辑</button>
+            <button type="button" class="btn btn-warning btn-xs logout-profile">注销</button>
         </td>
     </tr>
+    {{/each}}
+</script>
+<!--讲师信息模板-->
+<script type="text/html" id="teacherInfoTemplate">
+
+    <tr>
+        <th>姓名:</th>
+        <td>{{@result.tc_name}}</td>
+        <th>职位:</th>
+        <td colspan="2">{{@result.tc_roster}}</td>
+        <td rowspan="4">
+            <img src="{{@result.tc_avatar}}/assets/resources/images/default.png" width="100" class="center-block">
+        </td>
+    </tr>
+    <tr>
+        <th>花名:</th>
+        <td>{{@result.tc_roster}}</td>
+        <th>出生日期:</th>
+        <td colspan="2">{{@result.tc_birthday}}</td>
+    </tr>
+    <tr>
+        <th>性别:</th>
+        <td>{{@result.tc_gender}}</td>
+        <td>入职日期:</td>
+        <td colspan="2">{{@result.tc_join_date}}</td>
+    </tr>
+    <tr>
+        <th>手机号码:</th>
+        <td colspan="2">{{@result.tc_cellphone}}</td>
+        <td>邮箱:</td>
+        <td>{{@result.tc_email}}</td>
+    </tr>
+    <tr>
+        <th>籍贯:</th>
+        <td colspan="5">{{@result.tc_hometown}}</td>
+    </tr>
+    <tr>
+        <td colspan="6" class="intro">
+            {{@result.tc_introduce}}
+        </td>
+    </tr>
+
 </script>
 
+<?php include_once("./views/common/script.html"); ?>
 <script>
+    //获取讲师列表
+    $.ajax({
+        url:"/api/teacher",
+        type:"get",
+        data:null,
+        success:function (data) {
+            //console.log(data);
+            var teacherList = template("teacherListTemplate",data);
 
-    $(function () {
-        $("#toggle-btn").click(function (e) {
-            e.preventDefault();
+            $("#teacherList").html(teacherList);
+        }
+    });
+    //查看讲师
 
-            $(".user-dropdown-menu").slideToggle();
+
+    $("#teacherList").on("click",".view-profile",function () {
+        var tc_id = parseInt($(this).parents("tr").children().eq(0).attr("data-id"));
+        $.ajax({
+            url:"/api/teacher/view",
+            type:"get",
+            data:{tc_id:tc_id},
+            success:function (data) {
+                console.log(data);
+                var teacherInfo = template("teacherInfoTemplate",data);
+
+                $("#teacherInfo tbody").html(teacherInfo);
+            }
         });
     });
 

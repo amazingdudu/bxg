@@ -8,81 +8,99 @@
     <title>每天进步一点点</title>
     <?php include_once("./views/common/style.html"); ?>
     <link rel="stylesheet" href="/assets/libs/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
-    <link rel="stylesheet/less" href="/assets/less/index.less">
-    <?php include_once("./views/common/script.html"); ?>
+
 </head>
 <body>
-    <?php include_once("./views/common/sidebar.html"); ?>
-    <div class="main">
-        <div id="user-profile">
-            <div class="container-fluid">
-                <div class="form clearfix">
-                    <form class="form-horizontal col-lg-6 col-lg-offset-2">
-                        <!--昵称-->
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">昵称</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" value="vick">
-                            </div>
+<?php include_once("./views/common/sidebar.html"); ?>
+<div class="main">
+    <div id="user-profile">
+        <div class="container-fluid">
+            <div class="form clearfix">
+                <form class="form-horizontal col-lg-6 col-lg-offset-2">
+                    <!--昵称-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">昵称</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" value="vick">
                         </div>
-                        <!--性别-->
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">是否选择</label>
-                            <div class="col-sm-5">
-                                <label class="radio-inline">
-                                    <input type="radio" name="male" value="option1"> 男
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="female" value="option2"> 女
-                                </label>
-                            </div>
+                    </div>
+                    <!--性别-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">是否选择</label>
+                        <div class="col-sm-5">
+                            <label class="radio-inline">
+                                <input type="radio" name="male" value="option1"> 男
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="female" value="option2"> 女
+                            </label>
                         </div>
-                        <!--出生日期-->
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">出生日期</label>
-                            <div class="input-append date col-sm-10" data-date-format="dd-mm-yyyy" id="datetimepicker">
-                                <input class="span2 form-control input-sm" size="16" type="text">
-                                <span class="add-on"><i class="icon-th"></i></span>
-                            </div>
+                    </div>
+                    <!--出生日期-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">出生日期</label>
+                        <div class="input-append date col-sm-10" data-date-format="dd-mm-yyyy" id="datetimepicker1">
+                            <input class="span2 form-control input-sm" size="16" type="text">
+                            <span class="add-on"><i class="icon-th"></i></span>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">籍贯</label>
-                            <div class="col-sm-10">
-                                <select class="form-control col-sm-4">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                                <select class="form-control col-sm-4">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                                <select class="form-control col-sm-4">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
+                    </div>
+                    <!--籍贯-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">籍贯</label>
+                        <div class="col-sm-10" id="choose" data-toggle="distpicker">
+                            <select class="form-control">
+
+                            </select>
+                            <select class="form-control">
+
+                            </select>
+                            <select class="form-control">
+
+                            </select>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                    <!--电话号码-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">手机号码</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="1234567890">
+                        </div>
+                    </div>
+                    <!--邮箱-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">邮箱</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" value="vick@hotmail.com">
+                        </div>
+                    </div>
+                    <!--入职日期-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">入职日期</label>
+                        <div class="input-append date col-sm-10" data-date-format="dd-mm-yyyy" id="datetimepicker2">
+                            <input class="span2 form-control input-sm" size="16" type="text">
+                            <span class="add-on"><i class="icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">个人介绍</label>
+                        <div class="col-sm-10">
+                            <textarea name="editor" id="TextArea1" class="ckeditor"></textarea>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    <script src="/assets/libs/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
-    <script src="/assets/libs/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
-    <script>
-        $(function () {
-            //bootstrap时间控件
-            $("#datetimepicker").datetimepicker(
-                {
+</div>
+<?php include_once("./views/common/script.html"); ?>
+<script src="/assets/libs/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script src="/assets/libs/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script>
+    $(function () {
+        //bootstrap时间控件
+        var dateTime = [$("#datetimepicker1"), $("#datetimepicker2")];
+        $.each(dateTime, function (i, v) {
+            v.datetimepicker({
                     format: 'yyyy-mm-dd',  //日期格式   //默认 dd--mm--yyyy
                     autoclose: true,    //自动关闭  -- 默认值fasle
                     language: 'zh-CN',  //语言      --默认英文
@@ -91,11 +109,20 @@
                     keyboardNavigation: true,  //是否允许通过键盘方向键更改日期
                     pickerPosition: "bottom-right", //默认值: 'bottom-right' (还支持 : 'bottom-left','top-left','top-right')
                     minView: 'month', //所能够提供的最精确的时间选择视图。 --默认值'hour'
-                    initialDate: new Date()//初始化当前日期  可设置"2010/01/01"格式
+                    initialDate: new Date()//初始化当前日期  可设置"2010/01/01"字符串格式
                 }
             );
         });
+    })
+</script>
+<script src="/assets/libs/distpicker/distpicker.js"></script>
+<script>
+    $("#choose").distpicker();
+</script>
+<!--<script src="/assets/libs/ckeditor/ckeditor.js"></script>-->
+<script type="text/javascript">
+//    CKEDITOR.replace( 'editor');
 
-    </script>
+</script>
 </body>
 </html>
