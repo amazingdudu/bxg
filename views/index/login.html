@@ -5,8 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>每天进步一点点</title>
-    <?php include_once("./views/common/style.html") ?>
+    <title>登录页</title>
+    <?php include_once("./views/common/style.html"); ?>
 </head>
 <body>
 <div id="login-page">
@@ -31,31 +31,7 @@
 <?php include_once("./views/common/script.html"); ?>
 
 <script>
-
-    $("#loginForm").on("submit", function () {
-        var formData = $(this).serialize();
-        //console.log(formData);
-        $.ajax({
-            url: "/api/login",
-            type: "post",
-            data: formData,
-            success: function (info) {
-                if (info.code == 404) {
-                    alert("用户名或密码错误!")
-                }
-                if (info.code == 200) {
-                    alert(info.msg);
-                    $.cookie("userInfo", JSON.stringify(info.result), {
-                        expires: 1,
-                        path: "/"
-                    });
-                    location.href = "/";
-                }
-            }
-        });
-        return false;
-    });
-
+    require(["login"]);
 </script>
 </body>
 </html>

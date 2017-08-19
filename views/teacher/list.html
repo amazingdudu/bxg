@@ -84,7 +84,7 @@
                     </div>
                     <div class="panel-body">
                         <table class="table table-bordered" id="teacherInfo">
-                            <tbody>
+                            <!--<tbody>
                             <tr>
                                 <th>姓名:</th>
                                 <td>李清照</td>
@@ -123,7 +123,7 @@
                                     <p>李清照出生于书香门第，早期生活优裕，其父李格非藏书甚富，她小时候就在良好的家庭环境中打下文学基础。出嫁后与夫赵明诚共同致力于书画金石的搜集整理。金兵入据中原时，流寓南方，境遇孤苦。所作词，前期多写其悠闲生活，后期多悲叹身世，情调感伤。形式上善用白描手法，自辟途径，语言清丽。论词强调协律，崇尚典雅，提出词“别是一家”之说，反对以作诗文之法作词。能诗，留存不多，部分篇章感时咏史，情辞慷慨，与其词风不同。</p>
                                 </td>
                             </tr>
-                            </tbody>
+                            </tbody>-->
                         </table>
                     </div>
                 </div>
@@ -136,99 +136,76 @@
 
 <!--讲师列表模板-->
 <script type="text/html" id="teacherListTemplate">
-    {{each result value index}}
+    {{each list}}
     <tr>
-        <th data-id={{@value.tc_id}}>{{@value.tc_id}}</th>
-        <td>{{@value.tc_name}}</td>
-        <td>{{@value.tc_roster}}</td>
-        <td>{{@value.tc_gender}}</td>
-        <td>{{@value.tc_cellphone}}</td>
-        <td>{{@value.tc_birthday}}</td>
-        <td>{{@value.tc_email}}</td>
-        <td>{{@value.tc_join_date}}</td>
-        <td>
+        <th>{{$index+1}}</th>
+        <td>{{$value.tc_name}}</td>
+        <td>{{$value.tc_roster}}</td>
+        <td>{{$value.tc_gender==0?"男":"女"}}</td>
+        <td>{{$value.tc_cellphone}}</td>
+        <td>{{$value.tc_birthday}}</td>
+        <td>{{$value.tc_email}}</td>
+        <td>{{$value.tc_join_date}}</td>
+        <td data-id={{$value.tc_id}}>
             <button type="button" class="btn btn-info btn-xs view-profile" data-toggle="modal"
                     data-target="#infoModal">查看
             </button>
-            <button type="button" class="btn btn-info btn-xs edit-profile">编辑</button>
-            <button type="button" class="btn btn-warning btn-xs logout-profile">注销</button>
+            <a href="/teacher/add?tc_id={{$value.tc_id}}" type="button" class="btn btn-info btn-xs edit-profile">编辑</a>
+            <button type="button" class="btn btn-warning btn-xs logout-profile" data-status="{{$value.tc_status}}">{{$value.tc_status | showStatus}}</button>
         </td>
     </tr>
     {{/each}}
 </script>
 <!--讲师信息模板-->
 <script type="text/html" id="teacherInfoTemplate">
-
+    <tbody>
     <tr>
         <th>姓名:</th>
-        <td>{{@result.tc_name}}</td>
+        <td>{{tc_name}}</td>
         <th>职位:</th>
-        <td colspan="2">{{@result.tc_roster}}</td>
+        <td colspan="2">{{tc_roster}}</td>
         <td rowspan="4">
-            <img src="{{@result.tc_avatar}}/assets/resources/images/default.png" width="100" class="center-block">
+            {{if tc_avatar}}
+                <img src="{{tc_avatar}}" width="100" class="center-block">
+            {{else}}
+            <img src="/assets/resources/images/default.png" width="100" class="center-block">
+            {{/if}}
+
         </td>
     </tr>
     <tr>
         <th>花名:</th>
-        <td>{{@result.tc_roster}}</td>
+        <td>{{tc_roster}}</td>
         <th>出生日期:</th>
-        <td colspan="2">{{@result.tc_birthday}}</td>
+        <td colspan="2">{{tc_birthday}}</td>
     </tr>
     <tr>
         <th>性别:</th>
-        <td>{{@result.tc_gender}}</td>
+        <td>{{tc_gender == "0" ? "男":"女"}}</td>
         <td>入职日期:</td>
-        <td colspan="2">{{@result.tc_join_date}}</td>
+        <td colspan="2">{{tc_join_date}}</td>
     </tr>
     <tr>
         <th>手机号码:</th>
-        <td colspan="2">{{@result.tc_cellphone}}</td>
+        <td colspan="2">{{tc_cellphone}}</td>
         <td>邮箱:</td>
-        <td>{{@result.tc_email}}</td>
+        <td>{{tc_email}}</td>
     </tr>
     <tr>
         <th>籍贯:</th>
-        <td colspan="5">{{@result.tc_hometown}}</td>
+        <td colspan="5">{{tc_hometown}}</td>
     </tr>
     <tr>
         <td colspan="6" class="intro">
-            {{@result.tc_introduce}}
+            {{@tc_introduce}}
         </td>
     </tr>
-
+    </tbody>
 </script>
-
 <?php include_once("./views/common/script.html"); ?>
 <script>
-    //获取讲师列表
-    $.ajax({
-        url:"/api/teacher",
-        type:"get",
-        data:null,
-        success:function (data) {
-            //console.log(data);
-            var teacherList = template("teacherListTemplate",data);
-
-            $("#teacherList").html(teacherList);
-        }
-    });
-    //查看讲师
-
-
-    $("#teacherList").on("click",".view-profile",function () {
-        var tc_id = parseInt($(this).parents("tr").children().eq(0).attr("data-id"));
-        $.ajax({
-            url:"/api/teacher/view",
-            type:"get",
-            data:{tc_id:tc_id},
-            success:function (data) {
-                console.log(data);
-                var teacherInfo = template("teacherInfoTemplate",data);
-
-                $("#teacherInfo tbody").html(teacherInfo);
-            }
-        });
-    });
+    require(["teacherList"]);
+    require(["bootstrap"]);
 
 </script>
 </body>

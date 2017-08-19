@@ -1,4 +1,4 @@
-$(function () {
+define(["jquery", "template", "nprogress", "cookie"], function ($, template, NProgress) {
     //如果cookie中不存在 PHPSESSID
     if (!$.cookie("PHPSESSID") && location.pathname != "/login") {
         location.href = "/login";
@@ -19,29 +19,25 @@ $(function () {
     var html = render(userInfo);
 
     $(".user-info").html(html);
-});
 
+    //进度条，loading图片
 
-//课程管理下拉菜单
-$(function () {
+    $(document).ajaxStart(function () {
+        $("#loading").show();
+        NProgress.start();
+    }).ajaxStop(function () {
+        $("#loading").fadeOut();
+        NProgress.done(true);
+    });
+
+    //课程管理下拉菜单
+
     $("#toggle-btn").click(function (e) {
-        e.preventDefault();
-
+        // e.preventDefault();
         $(".user-dropdown-menu").stop().slideToggle();
     });
-});
 
-
-$(function () {
-    //进度条
-    NProgress.start();
-    NProgress.done(true);
-
-    //loading 图片
-
-    $("#loading").fadeOut();
-
-    //退出登录
+    //退出
     $(".logout").click(function () {
         $.ajax({
             url: "/api/logout",
@@ -52,7 +48,7 @@ $(function () {
                 if (logoutInfo.code == 200) {
 
                     alert(logoutInfo.msg);
-                    $.removeCookie("userInfo",{ path: '/' });
+                    $.removeCookie("userInfo", {path: '/'});
                     location.href = "/login";
                 }
             }
@@ -61,6 +57,9 @@ $(function () {
     });
 
 });
+
+
+
 
 
 
