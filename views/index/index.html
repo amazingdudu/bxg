@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>每天进步一点点</title>
     <!-----------引入公共样式文件---------------->
     <?php include_once("./views/common/style.html"); ?>
-
-
 </head>
+
 <body>
-<!---------------公共侧边栏和导航---------------------->
-<?php include_once("./views/common/sidebar.html"); ?>
-<div class="main" id="index-page">
-    <div class="statistics">
+    <!---------------公共侧边栏和导航---------------------->
+    <?php include_once("./views/common/sidebar.html"); ?>
+    <div class="main" id="index-page">
+        <div class="statistics">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="well item income">
@@ -63,17 +62,16 @@
                 </div>
             </div>
         </div>
-    <div id="chart" style="width: 600px;height:400px;"></div>
-</div>
+        <div id="chart" style="width: 600px;height:400px;"></div>
+    </div>
 
-<!------------引入js库文件----------------------->
-<?php include_once("./views/common/script.html"); ?>
+    <!------------引入js库文件----------------------->
+    <?php include_once("./views/common/script.html"); ?>
 
-<script>
-
-    require(["index"]);
-
-</script>
+    <script>
+        require(["index"]);
+    </script>
 
 </body>
+
 </html>
