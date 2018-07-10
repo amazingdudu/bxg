@@ -1,5 +1,5 @@
 <?php
-
+// tset
 // 给文件用作路由, 就是通过给定的 url 来显示不同的页面( 注意页面被放在 views 文件夹中 )
 
  //var_dump( $_SERVER );
